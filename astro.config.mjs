@@ -5,7 +5,6 @@ import starlightThemeGalaxy from 'starlight-theme-galaxy'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rengeos.github.io',
-	base: '/',
 	integrations: [
 		starlight({
 			title: 'RengeOS',
