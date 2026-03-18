@@ -8,7 +8,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'RengeOS',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/RengeOS' }],
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/RengeOS' },
+				{ icon: 'discord', label: 'Discord', href: 'https://discord.com/invite/pjJpHUSNPD' },
+				{ icon: 'email', label: 'Email', href: 'mailto:crystalforceix@gmail.com?subject=RengeOS Support&body=Hi!' },
+			],
 			plugins: [
        		      starlightThemeGalaxy()
       			 ],
@@ -46,12 +50,16 @@ export default defineConfig({
 					collapsed: false,
 				},
 				{
+					label: 'Immutable OS (Not yet)',
+					items: [],
+				},
+				{
 					label: 'Configuration',
 					items: [
 						{ label: 'NiriWM Edition', slug: 'configuration/niriwm-edition'},
 						{ label: 'Change GRUB Theme', slug:'configuration/change-grub-theme'},
 						{ label: 'Enable Bcachefs Rollback', slug: 'configuration/enable-bcachefs-rollback'},
-						{ label: 'Enable Compatibility Rollback', slug: 'configuration/enable-compatibility-rollback'},
+						{ label: 'Enable Compatibility Rollback (Not yet)', slug: 'configuration/enable-compatibility-rollback'},
 						{ label: 'ROS-Reborn (Recovery Mode)', slug: 'configuration/ros-reborn'},
 						{ label: 'ROS-Reborn-System-OTA (Recovery Mode)', slug: 'configuration/ros-reborn-system-ota'},
 					],
