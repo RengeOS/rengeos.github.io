@@ -1,0 +1,71 @@
+---
+title: Homepage
+template: splash
+hero:
+  title: |
+    <p style="font-size:45px;white-space:nowrap;background:linear-gradient(90deg,#8B51FF,#C77DFF,#5AF0FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-rendering:optimizeLegibility;">Welcome to RengeOS!</p>
+  tagline: |
+    <p style="font-size: 15px;">The next-generation, minimal and hackable operating system based on Arch Linux, focused on performance and maintainability.</p>
+  image:
+    file: ../../assets/RengeOS-logo.png
+  actions:
+    - text: Let’s get started!
+      link: ./introduction/overview
+      icon: right-arrow
+    - text: Getting an ISO
+      link: ./getting-started/getting-an-iso
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Quick Look
+
+| **Minimal Edition** | **NiriWM Edition** |
+|:---:|:---:|
+| ![Minimal Edition](../../assets/minimal-edition.png) | ![NiriWM Edition](../../assets/niriwm-edition.png) |
+
+## Reviews
+
+<br/>
+<b>From:</b><b><a href="https://www.youtube.com/@linuxhub70" target="_blank">LinuxHub</a>   (Thank you so much for reviewing it! ❤️ )</b>
+<br/>
+<b>Full video:</b><b><a href="https://www.youtube.com/watch?v=VLL2Nz3iwVY&t=813s" target="_blank">Video</a>  (RengeOS Minimal)</b>
+
+<details>
+<summary>Click here to show the video</summary>
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+  <iframe
+    src="https://www.youtube.com/embed/VLL2Nz3iwVY"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+  />
+</div>
+</details>
+
+## Features
+
+<CardGrid>
+	<Card title="Minimal yet powerful" icon="rocket">
+	  RengeOS is a flexible, robust, and highly maintainable system that allows users the freedom to manage their system in the way they want
+	</Card>
+  <Card title="Optimized kernels" icon="linux">
+    Built with O3 optimization and performance patches from CachyOS, TKG-Family, and other sources for better performance and efficiency
+  </Card>
+  <Card title="Install once" icon="heart">
+		No need to reinstall your system from a Live ISO if something breaks — simply recover using ros-reborn in GRUB recovery mode
+	</Card>
+	<Card title="Rollback any time you want" icon="star">
+		Bcachefs is supported by default, offering efficient CoW and snapshot capabilities for safe and fast system rollback
+	</Card>
+	<Card title="Your system, your rules" icon="setting">
+		The minimal edition lets you freely choose services, packages, and system behavior — delivering true Arch freedom on a clean
+	</Card>
+  <Card title="Solutions" icon="open-book">
+    We provides powerful snapshot tools and clear documentation to help both advanced and average users manage their system confidently ❤️
+  </Card>
+</CardGrid>

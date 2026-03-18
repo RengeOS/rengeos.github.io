@@ -1,0 +1,48 @@
+---
+title: Overview
+---
+
+## What's this?
+
+**RengeOS** is an Arch Linux–based distribution — a next-generation, hackable operating system built for performance and long-term maintainability.
+<br />
+
+## System Requirements
+---
+| Component | Minimum | Recommended |
+| :--- | :--- | :--- |
+| **Processor** | 1 GHz Dual Core | 2 GHz Dual Core |
+| **RAM** | 2 GB | 4 GB |
+| **Storage** | 30 GB | 45 GB |
+
+---
+
+## So what does it have?
+
++ **RengeOS** is an **Arch Linux-based distribution** that offers powerful performance geared towards individual devices and users, and also provides flexible, robust system maintenance capabilities such as ``Recovery Mode``, ``Snapshot Methods`` and support for ``bcachefs`` as the **default filesystem**, which makes **RengeOS** special.
+
++ **RengeOS** kernels are built with ``O3 optimization``, the ``lz4 algorithm``, and performance patches from ``CachyOS``, ``TKG-Family``, and ``other sources`` **prioritizing strong overall performance** for **everyday** use and you can verify this yourself by try this:)
+
++ **RengeOS** also offers a ``Recovery Mode`` **feature**, **which** is essentially a **second RengeOS** system located on a **separate partition** on your machine. **It** allows you to **boot into** and **log into the tty** then **repair** your main system **if** you encounter problems such as kernel, service, package conflicts, or a black screen due to missing drivers. **This** can be done by **mounting the system**, then ``arch-chroot`` into the drive (usually ``/``) and **repairing it** without needing a **USB drive** or **Live ISO** as is typically done directly on your machine (**Advanced Users**).
+
++ **Furthermore**, it provides tools like ``ros-reborn`` and ``ros-reborn-system-ota`` along with a ``Recovery Mode`` that allows you to **reinstall the system to its original state (similar to a factory reset on Android)** and switch between **RengeOS versions** flexibly **without** needing a **USB drive** or **Live ISO** performing the process directly on your device.
+
+<br />
+
+## Open Source Commitment
+
++ **I, Phú — the creator of RengeOS** — am committed to keeping RengeOS fully open source. All core components, build scripts, and system tools will remain publicly available under the GNU GPLv3 license.
+
++ **RengeOS** will always be free to use, modify, and redistribute. Development will remain transparent, and community contributions are welcome.
+
++ **As long as** I maintain this project, **RengeOS** will receive regular updates and long-term support, following Arch Linux and its upstream development.
+
+## Questions and Answers
+ - Q: **Does** it support UEFI and Legacy BIOS modes?
+ + A: Yes!
+
+ - Q: **Is it** stable and safe for daily use?
+ + A: Basically yes!, but it's not guaranteed yet as it's still under development btw you can try it once:)
+
+ - Q: **Why** did you choose ``bcachefs`` even though it's not yet widely used as a primary filesystem?
+ - A: Because I like its filesystem design and it provides good support for ``LZ4 Algorithm`` in background compression and many other things like ``snapshots``, ``hard drive bcache``, ``CoW``, etc.

@@ -1,0 +1,99 @@
+---
+title: Enable Bcachefs Rollback
+---
+
+**Bcachefs** is basically quite similar to the Btrfs we know, and if you want to learn more about it,
+you can read here: <a href="https://bcachefs.org/" target="_blank" rel="noopener noreferrer">Bcachefs Filesystem</a>
+
+<br />
+
+**Currently**, there's no clear explanation online for how to take snapshots of the / directory system in bcachefs,
+so we can now enable snapshots for bcachefs by running the `bcachefs-rollback` hook of mkinitcpio for initramfs.
+<br />
+**Thanks** to [**@bathtime**](https://github.com/bathtime) for coming up with this method ❤️
+
+## Let's proceed
+<br />
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Watch out!">
+  **Currently**, this method is used daily by the owner on their personal computer,
+  but there is no guarantee that it will not cause any problems in the future,
+  and since it is not a common method, use it at **your own risk!**
+</Aside>
+
+**First**, we need to ``git clone`` this source before proceeding.
+
+```sh
+cd /tmp/ && git clone https://github.com/RengeOS/Bcachefs-Rollback-Initramfs
+```
+
+<Aside type="danger">
+  **Do not** modify hooks inside the source code if you do not understand how they work, as this could lead to **Kernel Panic!**
+</Aside>
+
+**Next**, we will install it by building it from source code with ``makepkg -si``.
+
+```sh
+cd Bcachefs-Rollback-Initramfs/ && makepkg -si
+```
+**After** the package build and installation process is successful, our task is to restart the entire system.
+
+```sh
+# you can replace reboot to 'systemctl reboot' if not working
+reboot
+```
+
+## How to use Bacachefs Rollback
+
+- **After** restarting following the first time you **enable** ``Bacachefs Rollback``, you will encounter something like this.
+
+![1](../../../assets/example-bcachefs-rollback/1.png)
+
+- **Now**, the first thing you need to do is press [**n**] to create ``@current-root`` based on your ``/`` and located in the ``/.snapshots`` directory.
+- **Next**, press the [**enter**] button to boot into the ``@current-root`` you created earlier, and I will explain about ``Bcachefs Rollback`` later.
+
+## Options in Bacachefs Rollback
+
+<Aside type="note">
+  **Currently**, you may see many **options** like the image above and **feel hesitant**,
+  but **don't worry** because you'll mostly use ``bcachefs snapshots`` rather than other
+  unrelated things like ``squashfs`` and ``flags``, and it's very simple to use :)
+</Aside>
+
+
+<Aside type="caution" title="note">
+- The ``/`` partition and the ``@current-root`` snapshot partition are **two completely different things**.
+- ``@current-root`` will **always be located** in the following path: ``/.snapshots/@current-root``
+- ``@current-root`` can be **created** based on the ``/`` partition or ``other snapshots`` you have **created**.
+</Aside>
+
+### ---Boot Options---
+
+- ``[b] boot root system`` : **Allows direct booting into the ``/`` partition**.
+<br />
+- ``[s] boot into a snapshot`` : **Allows you to boot into the created snapshot you want in ``/.snapshots/``**.
+  **Simply enter the information on the listed created snapshot and you will boot into that snapshot**.
+<br />
+- ``[x] boot into squashfs``: **Allow booting into the created ``name.sfs`` file, usually located in ``/``**.
+<br />
+- ``[c] boot into custom dir``: **This allows you to boot into the created snapshot with your desired path, and by default you will be at ``/``**.
+
+### ---Restore Options---
+
+- ``[p] restore root system from @current-root (using cp)`` : **Allows you to restore ``/`` from the ``@current-root`` snapshot using the ``cp`` command, and you will be able to boot into ``/`` instead of just the ``@current-root`` snapshot**.
+<br />
+- ``[r] restore other snapshot to @current-root (backup old)`` : **This allows you to select the snapshot that was created as the primary snapshot,
+  which will become the ``@current-root`` and
+  will also back up the previous ``@current-root`` to ``@previous-root`` for safety in case you need to return to it later**.
+<br />
+- ``[R] restore other snapshot to @current-root (using mv)`` : **Allows you to select the snapshot that was created as the primary snapshot, which will become the ``@current-root`` using ``mv`` command**.
+<br />
+- ``[u] restore other snapshot using rsync`` : **Honestly, I haven't tried this feature yet, so I can't tell how it works :( but I'll try it in the future.**
+<br />
+- ``[y] restore squashfs`` : **Honestly, I haven't tried this feature yet, so I can't tell how it works :( but I'll try it in the future.**
+
+### ---Create Options---
+
+(Everything will be finished soon!)
