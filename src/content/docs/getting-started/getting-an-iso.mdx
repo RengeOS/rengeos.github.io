@@ -15,7 +15,7 @@ import { Aside } from '@astrojs/starlight/components';
 </Aside>
 
 ### RengeOS ISO (Minimal Edition)
-**Last time the ISO was built:** ``2026-03-06``
+**Last time the ISO was built:** ``2026-03-20``
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
@@ -25,6 +25,8 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   </Card>
   <Card title="Github Release (Latest)" icon="cloud-download">
     Obtain an ISO here: <a href="https://github.com/RengeOS/Source-ISO/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
+    <span style="line-height:0.6;"></span>
+    How to combine ISO: <a href="/getting-started/getting-an-iso/#download-from-github-and-combine-each-iso-part" rel="noopener noreferrer">Instruction</a>
   </Card>
 </CardGrid>
 
@@ -33,7 +35,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 <br/>
 
 ### RengeOS ISO (NiriWM Edition)
-**Last time the ISO was built:** ``2026-03-06``
+**Last time the ISO was built:** ``2026-03-20``
 
 <CardGrid>
   <Card title="SourceForge (Latest)" icon="cloud-download">
@@ -67,7 +69,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 # I need to move to the location where the downloaded parts are stored.
 cd ~/Downloads/
 # Now let's combine them.
-cat rengeos-niriwm-2026.03.06-x86_64.iso.part* > rengeos-niriwm-2026.03.06-x86_64.iso
+cat rengeos-niriwm-2026.03.20-x86_64.iso.part* > rengeos-niriwm-2026.03.20-x86_64.iso
 ```
 ## Build it from source code (Arch-based)
 
@@ -122,15 +124,15 @@ cd ~ && git clone --branch niriwm-iso https://github.com/RengeOS/Source-ISO && c
 
 ```sh
 [test@rengeos ~]$ ls test/
-rengeos-2026.01.29-x86_64.iso  rengeos-2026.01.29-x86_64.iso.sha256
+rengeos-2026.03.20-x86_64.iso  rengeos-2026.03.20-x86_64.iso.sha256
 ```
 
 + **Now** we will proceed to checksum the files.
 + **Replace** it with the **SHA256 file** of the **ISO** you downloaded earlier, and here is an example:
 
 ```sh
-[test@rengeos ~]$ cd test/ && sha256sum -c rengeos-2026.01.29-x86_64.iso.sha256
-rengeos-2026.01.29-x86_64.iso: OK
+[test@rengeos ~]$ cd test/ && sha256sum -c rengeos-2026.03.20-x86_64.iso.sha256
+rengeos-2026.03.20-x86_64.iso: OK
 ```
 
 + **If** it says ``OK`` as above, then your **ISO** is definitely fine; otherwise, **I recommend** you download a new **ISO**.
