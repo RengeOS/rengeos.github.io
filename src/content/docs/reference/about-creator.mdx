@@ -1,0 +1,70 @@
+---
+title:  ‎ 
+template: splash
+---
+
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+{/* Avatar */}
+
+<div style="display:flex; flex-direction:column; align-items:center; text-align:center; padding: 4rem 1rem 2rem; gap: 1rem;">
+  <img 
+    src="https://raw.githubusercontent.com/RengeOS/rengeos.github.io/main/src/assets/creator.png"
+    alt="Creator logo"
+    style="width: 180px; height: 180px; border-radius: 50%; border: 0.5px none #8B51FF; box-shadow: 0 0 16px #8B51FF55;"
+  />
+  <h1 style="background: linear-gradient(90deg, #8B51FF, #C77DFF, #5AF0FF); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin: 0;">
+    Lê Nguyễn Hoàng Gia Phú
+  </h1>
+  <p style="color: var(--sl-color-gray-2); font-size: 1.1rem; max-width: 480px; margin: 0;">
+    ❄ Developer · Arch Linux Enthusiast · Open Source Development ❄
+  </p>
+  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem;">
+    
+    <LinkButton href="https://github.com/crystalforceix" icon="github" variant="primary">GitHub</LinkButton>
+    <LinkButton href="mailto:crystalforceix@gmail.com?subject=RengeOS Support&body=Hi!" icon="email" variant="minimal">Email</LinkButton>
+    <LinkButton href="https://sourceforge.net/u/crystalforceix/profile" icon="external" variant="minimal">Sourceforge</LinkButton>
+    
+  </div>
+</div>
+
+{/* ABOUT ME */}
+<div style="max-width: 640px; margin: 0 auto 3rem; text-align: center;">
+  <h2 style="color: var(--sl-color-white);">☀ About Me ☀</h2>
+  <p style="color: var(--sl-color-gray-2); line-height: 1.8;">
+  Hi, my name's Phú, I'm a full-time freelance open-source developer with experience in implementing Linux architectures, and RengeOS is one example:D
+  </p>
+</div>
+
+{/* Achievements */}
+<div style="max-width: 900px; margin: 0 auto 3rem;">
+  <h2 style="text-align:center; color: var(--sl-color-white);">🏆 Achievements 🏆</h2>
+  <CardGrid>
+    <Card title="Creator of RengeOS" icon="rocket">
+      An Linux distribution based on Arch Linux, aimed at advanced users.
+    </Card>
+    <Card title="Author of Hypershift (In progress)" icon="setting">
+      The immutable system installation tool is based on my design and was written in Python.
+    </Card>
+  </CardGrid>
+</div>
+
+{/* RengeOS STATS */}
+<div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin: 2rem 0 3rem; text-align: center;">
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2025</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Since</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Arch-based</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Based On</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GPLv3 or later</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">License</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Open source project</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Source</div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+---
+title: Immutable OS Migration
+---
+
+**Author’s Note**: There are currently quite a few reasons why I've decided to refactor RengeOS:
+1. The current system architecture has multiple design limitations. Tools such as ``ros-reborn-system-ota`` are heavily dependent on the maintainer and release cycle, making them less practical and less flexible for everyday use.
+2. Dividing the ISOs into different editions makes it difficult for me to maintain them (especially since I'm the only one developing the project) and makes it hard for users to choose which version to use.
+3. Some features mentioned in the documentation, aside from ``Recovery Mode``, may not be essential for most users.
+4. Features such as ``bcachefs`` filesystem, ``linux-stratix-pulse`` kernel, and  ``zram`` setup have been reported to be unstable.
+
++ **Ultimately**, the current RengeOS user base is dwindling over time, and perhaps they need something newer, so **I've decided to migrate from 
+Mutable OS to Immutable OS**, making it more unique. **Once everything is ready**, development will fully shift toward the immutable version of RengeOS.
+
++ **Since the project began**, I haven't received any funding for its development, and that has made me think a lot about whether to continue or not. But it doesn't matter anymore because now I will redefine where RengeOS belongs through this migration :)
+
+## Question and Answer
+<br/>
+
+**Question 1**: Why should it be an immutable system instead of the current one?
+
+-> Answer: Because immutable systems are more stable, predictable, and easier to recover when something breaks.
+<br/>
+
+**Question 2**: Doesn't immutability reduce user freedom?
+
+-> Answer: No. The goal is to protect the core system while still allowing customization and development.
+<br/>
+
+**Question 3**: What if an update breaks the system?
+
+-> Answer:
++ ``hypershift`` tool uses an Android-like A/B architecture to safely build new images in the inactive slot instead of modifying the currently running system. This helps prevent broken images from affecting the active root partition.
+
++ If a newly written image becomes corrupted for any reason, the system can still roll back to the previous slot through the GRUB menu and rebuild the image again from the old working system.
+
+**Question 4**: How do I customize or update the system?
+
+-> Answer: Your task is simply to declare the system via the configuration.toml file, and the ``hypershift`` tool will read it and build the image as you want (quite similar to Blend OS and NixOS, perhaps).
+
+**Question 5**: Will the immutable design make the system harder for users to use?
+
+-> Answer: 
+
++ Not really. I intentionally chose the TOML format for the configuration file because it is simple, readable, and easier for users to understand when customizing the system.
+
++ However, users will still need some time to familiarize themselves with the immutable architecture and workflow of the system. Documentation will be provided once the immutable version is ready.
+
+## TODO
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">My track might not be very detailed or complete, but I'll add more if I find anything new:D</Aside>
+
+```md
+# Table to know
+[*] Currently in progress
+[x] Already done
+[] Not yet
+```
+
+**1**. Hypershift
+
+- [x] Immutable system layout design
+- [x] Programming the Hypershift tool from scratch
+- [x] Successfully tested the immutable system design through the program I wrote
+- [*] Bug fixes and feature improvements
+- []  One last test before packing it up
+- [x]  Add GPLv3 license and make source code public
+- []  Package the source code using PKGBUILD and upload it to the official RengeOS repository
+
+**2**. Source code ISO
+
+- [] Add support for immutable system
+- [] ISO packaging and testing
+- [] Bug fixes and feature additions
+- [] Final testing before packaging and public release
+- [] Stop supporting mutable system as not planed once immutable system are stable and ready for daily use
+
+**3**. Docs
+
+- [] Document restructuring
+- [] Write a guide for configuring immutable systems using TOML
+- [] Correct the typos and provide a clearer explanation

@@ -1,0 +1,161 @@
+---
+title: Homepage
+template: splash
+hero:
+  title: |
+    <p style="font-size:45px;white-space:nowrap;background:linear-gradient(90deg,#8B51FF,#C77DFF,#5AF0FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-rendering:optimizeLegibility;">Welcome to RengeOS!</p>
+  tagline: |
+    <p style="font-size: 15px;">The next-generation, minimal and hackable operating system based on Arch Linux, focused on performance and maintainability.</p>
+  image:
+    file: ../../assets/RengeOS-logo.png
+  actions:
+    - text: Let’s get started!
+      link: ./introduction/overview
+      icon: right-arrow
+    - text: Getting an ISO
+      link: ./getting-started/getting-an-iso
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Quick Look
+
+| **Minimal Edition** | **NiriWM Edition** |
+|:---:|:---:|
+| ![Minimal Edition](../../assets/minimal-edition.png) | ![NiriWM Edition](../../assets/niriwm-edition.png) |
+
+## Reviews
+
+<br/>
+<b>From:</b><b><a href="https://www.youtube.com/@linuxhub70" target="_blank">LinuxHub</a>   (Thank you so much for reviewing it! ❤️ )</b>
+<br/>
+<br/>
+<b>Full video:</b><b><a href="https://www.youtube.com/watch?v=VLL2Nz3iwVY&t=813s" target="_blank">Video</a>  (RengeOS Minimal)</b>
+
+<details>
+<summary>Click here to show the video</summary>
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+  <iframe
+    src="https://www.youtube.com/embed/VLL2Nz3iwVY"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+  />
+</div>
+</details>
+
+<br/>
+<b>Full video:</b><b><a href="https://www.youtube.com/watch?v=1gfVeZMWElI" target="_blank">Video</a>  (RengeOS NiriWM)</b>
+
+<details>
+<summary>Click here to show the video</summary>
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+  <iframe
+    src="https://www.youtube.com/embed/1gfVeZMWElI"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+  />
+</div>
+</details>
+<br/>
+<b>From:</b><b><a href="https://www.linkedin.com/posts/adeolu-oluade_rengeos-archlinux-opensource-activity-7438147136682156034-8vcJ" target="_blank">Adeolu Oluade</a>   (Thank you so much for reviewing it! ❤️ )</b>
+<br/>
+<br/>
+<b>Review post:</b><b><a href="https://thedistrowriteproject.blogspot.com/2026/03/rengeos-agile-arch-based-innovation-for.html" target="_blank">Post</a>  (RengeOS NiriWM)</b>
+
+## Features
+
+<CardGrid>
+	<Card title="Minimal yet powerful" icon="rocket">
+	  RengeOS is a flexible, robust, and highly maintainable system that allows users the freedom to manage their system in the way they want
+	</Card>
+  <Card title="Optimized kernels" icon="linux">
+    Built with O3 optimization and performance patches from CachyOS, TKG-Family, and other sources for better performance and efficiency
+  </Card>
+  <Card title="Install once" icon="heart">
+		No need to reinstall your system from a Live ISO if something breaks — simply recover using ros-reborn in GRUB recovery mode
+	</Card>
+	<Card title="Rollback any time you want" icon="star">
+		Bcachefs is supported by default, offering efficient CoW and snapshot capabilities for safe and fast system rollback
+	</Card>
+	<Card title="Your system, your rules" icon="setting">
+		The minimal edition lets you freely choose services, packages, and system behavior — delivering true Arch freedom on a clean
+	</Card>
+  <Card title="Solutions" icon="open-book">
+    We provides powerful snapshot tools and clear documentation to help both advanced and average users manage their system confidently ❤️
+  </Card>
+</CardGrid>
+
+{/* RengeOS STATS */}
+<div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin: 2rem 0 3rem; text-align: center;">
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2025</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Since</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Arch-based</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Based On</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GPLv3 or later</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">License</div>
+  </div>
+  <div>
+    <div style="font-size: 2rem; font-weight: bold; background: linear-gradient(90deg, #8B51FF, #5AF0FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Open source project</div>
+    <div style="color: var(--sl-color-gray-2); font-size: 0.9rem;">Source</div>
+  </div>
+</div>
+
+
+{/* RengeOS FOOTER */}
+<footer className="rengeos-footer">
+  <p>
+    © 2026 RengeOS Project |
+    <a href="https://github.com/crystalforceix" target="_blank" ><strong> Lê Nguyễn Hoàng Gia Phú</strong> </a>
+  </p>
+</footer>
+
+<style>
+{`
+.rengeos-footer {
+  margin-top: 5rem;
+  padding: 24px 0;
+
+  border-top: 1px solid var(--sl-color-gray-5);
+
+  text-align: center;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "San Francisco",
+    "Helvetica Neue",
+    sans-serif;
+
+  font-size: 0.92rem;
+
+  color: var(--sl-color-gray-2);
+
+  letter-spacing: -0.01em;
+}
+
+.rengeos-footer p {
+  margin: 0;
+}
+
+.rengeos-footer strong {
+  font-weight: 700;
+
+  color: currentColor;
+
+  opacity: 0.95;
+}
+`}
+</style>
